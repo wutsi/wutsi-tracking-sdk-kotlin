@@ -6,7 +6,7 @@
 
   <artifactId>wutsi-tracking-sdk-kotlin</artifactId>
   <groupId>com.wutsi.analytics.tracking</groupId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.4-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>wutsi-tracking-sdk-kotlin</name>
@@ -16,7 +16,7 @@
 
     <feign.version>11.8</feign.version>
     <javax-validation.version>2.0.1.Final</javax-validation.version>
-    <kotlin.version>1.5.0</kotlin.version>
+    <kotlin.version>1.6.10</kotlin.version>
 
     <wutsi-platform-core.version>0.0.101</wutsi-platform-core.version>
   </properties>
