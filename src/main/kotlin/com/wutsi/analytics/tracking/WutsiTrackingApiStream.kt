@@ -5,13 +5,18 @@ import com.wutsi.analytics.tracking.dto.PushTrackResponse
 import com.wutsi.analytics.tracking.event.EventURN
 import com.wutsi.analytics.tracking.event.TrackPushedPayload
 import com.wutsi.platform.core.stream.EventStream
+import java.time.LocalDate
 import java.util.UUID
 
 class WutsiTrackingApiStream(
-  private val eventStream: EventStream
-): WutsiTrackingApi {
-  override fun push(request: PushTrackRequest): PushTrackResponse {
-    eventStream.publish(EventURN.TRACK_PUSHED.urn, TrackPushedPayload(request.track))
-    return PushTrackResponse(transactionId = UUID.randomUUID().toString())
-  }
+    private val eventStream: EventStream
+) : WutsiTrackingApi {
+    override fun push(request: PushTrackRequest): PushTrackResponse {
+        eventStream.publish(EventURN.TRACK_PUSHED.urn, TrackPushedPayload(request.track))
+        return PushTrackResponse(transactionId = UUID.randomUUID().toString())
+    }
+
+    override fun aggregate(startDate: LocalDate) {
+        throw NotImplementedError("Not implemented")
+    }
 }
